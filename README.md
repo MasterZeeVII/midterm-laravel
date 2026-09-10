@@ -16,11 +16,11 @@ expense_categories (Parent)
 
 ### ตารางที่ 1 — `expense_categories` (Parent)
 
-| คอลัมน์      | ชนิดข้อมูล | คำอธิบาย |
-|--------------|---|---|
-| `cat_id`     | bigint | รหัสหมวดหมู่ (PK) |
-| `cat_name`   | string | ชื่อหมวดหมู่ |
-| `cat_type`       | enum | `income` / `expense` |
+| คอลัมน์      | ชนิดข้อมูล | คำอธิบาย               |
+|--------------|---|------------------------|
+| `cat_id`     | bigint | รหัสหมวดหมู่ (PK)      |
+| `cat_name`   | string | ชื่อหมวดหมู่           |
+| `cat_type`       | enum | `รายรับ` / `รายจ่าย`   |
 | `timestamps` | timestamp | created_at, updated_at |
 
 ### ตารางที่ 2 — `transactions` (Child)
