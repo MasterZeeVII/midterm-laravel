@@ -60,6 +60,24 @@ expense_categories (Parent)
 
 Views อยู่ที่ `resources/views/index.blade.php` (เลย์เอาต์หลัก) + `resources/views/content/*.blade.php` (ฟอร์มรายการ, ฟอร์ม+ลิสต์หมวดหมู่, ตารางรายการ, แถบสรุปยอด)
 
+## วิธีติดตั้ง (clone มาใหม่)
+
+ต้องมี PHP 8.2+, Composer, และ MySQL (เช่นจาก XAMPP) พร้อมใช้งานก่อน
+
+```
+composer install
+copy .env.example .env
+php artisan key:generate
+```
+
+จากนั้นสร้างฐานข้อมูลชื่อ `crudnoslop` ใน MySQL ก่อน (Laravel ไม่สร้างฐานข้อมูลให้อัตโนมัติ) — เปิด phpMyAdmin หรือรันคำสั่ง
+
+```
+mysql -u root -e "CREATE DATABASE crudnoslop"
+```
+
+ค่าเริ่มต้นใน `.env.example` (`DB_DATABASE=crudnoslop`, `DB_USERNAME=root`, ไม่มีรหัสผ่าน) ตรงกับ XAMPP MySQL อยู่แล้ว ถ้าตั้งค่าฐานข้อมูลไว้ต่างออกไปให้แก้ `.env` ตามนั้น
+
 ## วิธีรัน
 
 ```
@@ -67,4 +85,4 @@ php artisan migrate
 php artisan serve
 ```
 
-ตั้งค่าฐานข้อมูลใน `.env` ตามปกติของ Laravel (MySQL, ตาราง `expense_categories` และ `transactions` ตามด้านบน)
+ไม่ต้อง `npm install` — โปรเจกต์นี้ไม่มี JavaScript ไม่มี Vite/`package.json`
